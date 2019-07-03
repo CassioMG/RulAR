@@ -10,6 +10,7 @@ import UIKit
 import SceneKit
 import ARKit
 import ChameleonFramework
+import SCNLine
 
 class ViewController: UIViewController, ARSCNViewDelegate {
 
@@ -107,9 +108,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     }
     
     
-    private func drawLine(from startPosition: SCNVector3, to endPosition: SCNVector3) {
+    private func drawLine(from startPoint: SCNVector3, to endPoint: SCNVector3) {
         
-        let lineGeometry = SCNGeometry.line(from: startPosition, to: endPosition)
+        let lineGeometry = SCNGeometry.line(points: [startPoint, endPoint], radius: 0.0025).0
+        lineGeometry.firstMaterial?.diffuse.contents = currentRandomColor
         
         let lineNode = SCNNode(geometry: lineGeometry)
         lineNode.position = SCNVector3Zero
@@ -124,17 +126,4 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Pause the view's session
         sceneView.session.pause()
     }
-}
-
-extension SCNGeometry {
-    
-    class func line(from vector1: SCNVector3, to vector2: SCNVector3) -> SCNGeometry {
-        
-        let indices: [Int32] = [0, 1]
-        let source = SCNGeometrySource(vertices: [vector1, vector2])
-        let element = SCNGeometryElement(indices: indices, primitiveType: .line)
-        
-        return SCNGeometry(sources: [source], elements: [element])
-    }
-    
 }
