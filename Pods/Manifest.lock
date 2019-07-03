@@ -2,9 +2,15 @@ PODS:
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
+  - SCNLine (1.0.3)
 
 DEPENDENCIES:
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
+  - SCNLine
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SCNLine
 
 EXTERNAL SOURCES:
   ChameleonFramework:
@@ -17,7 +23,8 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  SCNLine: 8efd7a5813ae43d88e3a8b2fd1c2f55fe9a3fd9d
 
-PODFILE CHECKSUM: cf3c0e8834a7394de46f0483fee053f49c982c3d
+PODFILE CHECKSUM: 575825a1e1e62f8bdb8f8c748db59f6f27dca4d3
 
 COCOAPODS: 1.6.1
