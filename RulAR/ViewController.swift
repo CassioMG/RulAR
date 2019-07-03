@@ -9,10 +9,13 @@
 import UIKit
 import SceneKit
 import ARKit
+import ChameleonFramework
 
 class ViewController: UIViewController, ARSCNViewDelegate {
 
     var dotNodes = [SCNNode]()
+    
+    var currentRandomColor: UIColor?
     
     @IBOutlet var sceneView: ARSCNView!
     
@@ -51,7 +54,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     private func addDot(at hitResult: ARHitTestResult) {
         
         let dotGeometry = SCNSphere(radius: 0.005)
-        dotGeometry.firstMaterial?.diffuse.contents = UIColor.red
+        currentRandomColor = RandomFlatColorWithShade(.light)
+        dotGeometry.firstMaterial?.diffuse.contents = currentRandomColor
         
         let dotNode = SCNNode(geometry: dotGeometry)
         
@@ -93,7 +97,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     private func printText(text: String, atPosition position: SCNVector3) {
     
         let textGeometry = SCNText(string: text, extrusionDepth: 1.0)
-        textGeometry.firstMaterial?.diffuse.contents = UIColor.red
+        textGeometry.firstMaterial?.diffuse.contents = currentRandomColor
         
         let textNode = SCNNode(geometry: textGeometry)
         textNode.position = SCNVector3(position.x, position.y + 0.01, position.z)
