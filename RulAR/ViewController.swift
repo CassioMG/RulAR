@@ -15,6 +15,8 @@ import SCNLine
 class ViewController: UIViewController, ARSCNViewDelegate {
 
     var dotNodes = [SCNNode]()
+    var lineNodes = [SCNNode]()
+    var textNodes = [SCNNode]()
     
     var currentRandomColor: UIColor?
     
@@ -51,7 +53,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         }
     }
     
-    
     private func addDot(at hitResult: ARHitTestResult) {
         
         let dotGeometry = SCNSphere(radius: 0.005)
@@ -67,19 +68,17 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         )
         
         sceneView.scene.rootNode.addChildNode(dotNode)
-        
         dotNodes.append(dotNode)
         
         calculateDistance(dotNodes)
     }
     
-    
     private func calculateDistance(_ nodes: [SCNNode]) {
         
         if nodes.count >= 2 {
             
-            let startPosition = nodes.first!.position
-            let endPosition = nodes.last!.position
+            let startPosition = nodes[nodes.count-2].position
+            let endPosition = nodes[nodes.count-1].position
             
             let distance = sqrt(
                 pow(endPosition.x - startPosition.x, 2) +
@@ -90,8 +89,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             printText(text: "\(Int(distance*100)) cm", atPosition: endPosition)
             
             drawLine(from: startPosition, to: endPosition)
-            
-            dotNodes.removeFirst()
         }
     }
     
@@ -105,8 +102,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         textNode.scale = SCNVector3(0.005, 0.005, 0.005)
         
         sceneView.scene.rootNode.addChildNode(textNode)
+        textNodes.append(textNode)
     }
-    
     
     private func drawLine(from startPoint: SCNVector3, to endPoint: SCNVector3) {
         
@@ -117,8 +114,15 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         lineNode.position = SCNVector3Zero
         
         sceneView.scene.rootNode.addChildNode(lineNode)
+        lineNodes.append(lineNode)
     }
     
+    @IBAction func eraseScene(_ sender: UIBarButtonItem) {
+        
+        textNodes.removeAll { $0.removeFromParentNode(); return true }
+        lineNodes.removeAll { $0.removeFromParentNode(); return true }
+        dotNodes.removeAll { $0.removeFromParentNode(); return true }
+    }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
