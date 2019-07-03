@@ -1,0 +1,6 @@
+framework module Pods_RulAR {
+  umbrella header "Pods-RulAR-umbrella.h"
+
+  export *
+  module * { export * }
+}
