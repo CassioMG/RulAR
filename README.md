@@ -1,2 +1,2 @@
 # RulAR
-Virtually measure any space with this AR Ruler.
+Virtually measure any space with this colorful AR Ruler.
