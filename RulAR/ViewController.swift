@@ -26,7 +26,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         super.viewDidLoad()
         
         sceneView.delegate = self
-        sceneView.debugOptions = .showFeaturePoints
+        // sceneView.debugOptions = .showFeaturePoints
     }
     
     override func viewWillAppear(_ animated: Bool) {
