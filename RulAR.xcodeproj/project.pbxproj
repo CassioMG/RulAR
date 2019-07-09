@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		731573311B3E1F5764EFA2CF /* Pods_RulAR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32825DA96536848EDCFA278F /* Pods_RulAR.framework */; };
 		7BE4312722CD004E005342AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE4312622CD004E005342AD /* AppDelegate.swift */; };
-		7BE4312922CD004E005342AD /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BE4312822CD004E005342AD /* art.scnassets */; };
 		7BE4312B22CD004E005342AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE4312A22CD004E005342AD /* ViewController.swift */; };
 		7BE4312E22CD004E005342AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BE4312C22CD004E005342AD /* Main.storyboard */; };
 		7BE4313022CD004F005342AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BE4312F22CD004F005342AD /* Assets.xcassets */; };
@@ -21,7 +20,6 @@
 		385D9A7517AD9FC320C49F76 /* Pods-RulAR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RulAR.release.xcconfig"; path = "Target Support Files/Pods-RulAR/Pods-RulAR.release.xcconfig"; sourceTree = "<group>"; };
 		7BE4312322CD004E005342AD /* RulAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RulAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BE4312622CD004E005342AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7BE4312822CD004E005342AD /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		7BE4312A22CD004E005342AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7BE4312D22CD004E005342AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7BE4312F22CD004F005342AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,11 +70,10 @@
 			isa = PBXGroup;
 			children = (
 				7BE4312622CD004E005342AD /* AppDelegate.swift */,
-				7BE4312822CD004E005342AD /* art.scnassets */,
 				7BE4312A22CD004E005342AD /* ViewController.swift */,
 				7BE4312C22CD004E005342AD /* Main.storyboard */,
-				7BE4312F22CD004F005342AD /* Assets.xcassets */,
 				7BE4313122CD004F005342AD /* LaunchScreen.storyboard */,
+				7BE4312F22CD004F005342AD /* Assets.xcassets */,
 				7BE4313422CD004F005342AD /* Info.plist */,
 			);
 			path = RulAR;
@@ -88,7 +85,6 @@
 				B947F6140C9E7865C9970CD3 /* Pods-RulAR.debug.xcconfig */,
 				385D9A7517AD9FC320C49F76 /* Pods-RulAR.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -152,7 +148,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BE4312922CD004E005342AD /* art.scnassets in Resources */,
 				7BE4313322CD004F005342AD /* LaunchScreen.storyboard in Resources */,
 				7BE4313022CD004F005342AD /* Assets.xcassets in Resources */,
 				7BE4312E22CD004E005342AD /* Main.storyboard in Resources */,
